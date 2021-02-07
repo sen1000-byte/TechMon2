@@ -222,9 +222,12 @@
                                             <constraint firstAttribute="height" constant="80" id="HUc-KL-2vI"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="MisakiGothic" family="MisakiGothic" pointSize="17"/>
-                                        <state key="normal" title="こうげき" backgroundImage="gold_button.png">
+                                        <state key="normal" title="ためる" backgroundImage="gold_button.png">
                                             <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="tameru" destination="4MK-Xm-Sa1" eventType="touchUpInside" id="sED-3A-lnW"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cRD-qV-zcl">
                                         <rect key="frame" x="242.5" y="0.0" width="111.5" height="80"/>
@@ -232,14 +235,17 @@
                                             <constraint firstAttribute="height" constant="80" id="RVZ-LR-adP"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="MisakiGothic" family="MisakiGothic" pointSize="17"/>
-                                        <state key="normal" title="こうげき" backgroundImage="gold_button.png">
+                                        <state key="normal" title="ファイア" backgroundImage="gold_button.png">
                                             <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="fire" destination="4MK-Xm-Sa1" eventType="touchUpInside" id="jeL-id-cYp"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="MnX-v0-Y0E">
-                                <rect key="frame" x="62" y="494" width="147" height="71"/>
+                                <rect key="frame" x="62" y="464" width="147" height="98"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="mR9-h8-hsh">
                                         <rect key="frame" x="0.0" y="0.0" width="147" height="17"/>
@@ -292,6 +298,26 @@
                                             </label>
                                         </subviews>
                                     </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="tLB-fO-QGw">
+                                        <rect key="frame" x="0.0" y="81" width="147" height="17"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nSA-uQ-Rhl">
+                                                <rect key="frame" x="0.0" y="0.0" width="17" height="17"/>
+                                                <fontDescription key="fontDescription" name="MisakiGothic" family="MisakiGothic" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gkf-Pg-LXA">
+                                                <rect key="frame" x="47" y="0.0" width="100" height="17"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="oK1-ng-zTT"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="MisakiGothic" family="MisakiGothic" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -301,7 +327,7 @@
                             <constraint firstItem="uUB-fG-Dvg" firstAttribute="top" secondItem="iB9-PN-Hq5" secondAttribute="top" constant="80" id="6Ej-PF-6U2"/>
                             <constraint firstItem="rTI-So-hz6" firstAttribute="leading" secondItem="iB9-PN-Hq5" secondAttribute="leading" constant="30" id="9sZ-6l-Pm1"/>
                             <constraint firstItem="FHR-Am-g7R" firstAttribute="bottom" secondItem="iB9-PN-Hq5" secondAttribute="bottom" id="Eah-TY-MyV"/>
-                            <constraint firstItem="MnX-v0-Y0E" firstAttribute="top" secondItem="mbi-rf-2oB" secondAttribute="bottom" constant="180" id="ErY-ox-UdG"/>
+                            <constraint firstItem="MnX-v0-Y0E" firstAttribute="top" secondItem="mbi-rf-2oB" secondAttribute="bottom" constant="150" id="ErY-ox-UdG"/>
                             <constraint firstItem="mbi-rf-2oB" firstAttribute="leading" secondItem="iB9-PN-Hq5" secondAttribute="leading" constant="30" id="Fcg-Rf-3cP"/>
                             <constraint firstItem="FHR-Am-g7R" firstAttribute="leading" secondItem="iB9-PN-Hq5" secondAttribute="leading" id="LC1-ye-LxY"/>
                             <constraint firstItem="FHR-Am-g7R" firstAttribute="top" secondItem="iB9-PN-Hq5" secondAttribute="top" id="LKh-gi-NqC"/>
@@ -327,6 +353,7 @@
                         <outlet property="playerImageView" destination="n2i-YN-4YR" id="zJI-A8-DFD"/>
                         <outlet property="playerMPLabel" destination="7MD-p1-WvC" id="uZX-be-2lg"/>
                         <outlet property="playerNameLabel" destination="2jH-n7-tXk" id="NwT-bD-F97"/>
+                        <outlet property="playerTPLabel" destination="gkf-Pg-LXA" id="FQd-K3-bgE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7LS-Za-AoX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
