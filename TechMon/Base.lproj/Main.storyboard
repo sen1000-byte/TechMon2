@@ -13,10 +13,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Lobby View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TechMon" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LobbyViewController" customModule="TechMon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -77,6 +77,9 @@
                                 <state key="normal" title="冒険しにいく" backgroundImage="gold_button.png">
                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="toBattle" destination="BYZ-38-t0r" eventType="touchUpInside" id="I9g-kE-vfg"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -101,17 +104,19 @@
                         </constraints>
                     </view>
                     <connections>
-                        <segue destination="4MK-Xm-Sa1" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="PMM-BQ-3Ue"/>
+                        <outlet property="nameLabel" destination="8Pt-VE-zzw" id="W93-hb-JNI"/>
+                        <outlet property="staminaLabel" destination="Pj3-op-gbm" id="usb-oH-lwn"/>
+                        <segue destination="4MK-Xm-Sa1" kind="presentation" identifier="toBattle" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="PMM-BQ-3Ue"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="81.696428571428569"/>
         </scene>
-        <!--View Controller-->
+        <!--Battle View Controller-->
         <scene sceneID="dbx-UN-1e5">
             <objects>
-                <viewController id="4MK-Xm-Sa1" sceneMemberID="viewController">
+                <viewController id="4MK-Xm-Sa1" customClass="BattleViewController" customModule="TechMon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UkA-6U-l7F">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -207,6 +212,9 @@
                                         <state key="normal" title="こうげき" backgroundImage="gold_button.png">
                                             <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="attackAction" destination="4MK-Xm-Sa1" eventType="touchUpInside" id="z4p-zo-GvA"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZCU-he-po1">
                                         <rect key="frame" x="121.5" y="0.0" width="111" height="80"/>
@@ -310,6 +318,16 @@
                             <constraint firstItem="iB9-PN-Hq5" firstAttribute="trailing" secondItem="FHR-Am-g7R" secondAttribute="trailing" id="yT1-ck-Qto"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="enemyHPLabel" destination="kXg-A6-FEW" id="xoO-3L-FN6"/>
+                        <outlet property="enemyImageView" destination="mbi-rf-2oB" id="8aW-jB-xep"/>
+                        <outlet property="enemyMPLabel" destination="LDM-K2-SA7" id="x6n-YP-0qj"/>
+                        <outlet property="enemyNameLabel" destination="dgD-HS-A1j" id="aRj-zy-r94"/>
+                        <outlet property="playerHPLabel" destination="aII-iS-lLQ" id="Yzn-5K-mJJ"/>
+                        <outlet property="playerImageView" destination="n2i-YN-4YR" id="zJI-A8-DFD"/>
+                        <outlet property="playerMPLabel" destination="7MD-p1-WvC" id="uZX-be-2lg"/>
+                        <outlet property="playerNameLabel" destination="2jH-n7-tXk" id="NwT-bD-F97"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7LS-Za-AoX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
